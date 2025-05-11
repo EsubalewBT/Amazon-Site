@@ -1,12 +1,12 @@
 
 
 import './App.css'
-
+import Header from './Component/Header/Header'
 function App() {
   
   return (
     <>
-      <h1>Amazon</h1>
+      <Header/>
     </>
   )
 }
