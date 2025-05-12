@@ -52,10 +52,15 @@
 .Category__container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px;
-  padding: 40px 20px;
+  padding: 20px 20px;
+
+  position: relative;
+  z-index: 2;
+  margin-top: -310px; /* This value depends on how much overlap you want */
 }
+
 
 /* Responsive tweaks */
 @media (max-width: 992px) {
