@@ -6,6 +6,7 @@ import Auth from './src/Pages/Auth/Auth'
 import Order from './src/Pages/Order/Order'
 import Payment from './src/Pages/Payment/Payment'
 import Results from './src/Pages/Results/Results'
+import Productdetail from './src/Pages/Productdetail/Productdetail'
 
 function Routing() {
   return (
@@ -18,6 +19,8 @@ function Routing() {
         <Route path="/order" element={<Order />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/category/:CategoryName" element={<Results />} />
+        <Route path="/products/:productid" element={<Productdetail />} />
+        
         
       </Routes>
     </Router>
