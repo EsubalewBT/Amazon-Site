@@ -5,7 +5,7 @@ import { BsCart3 } from "react-icons/bs";
 import classes from "./Header.module.css";
 import logo from "../../assets/images/logo.ico";
 import Lowerheader from "./LowerHeader";
-
+import { Link } from "react-router-dom";
 function Header() {
   return (
     <>
@@ -13,9 +13,9 @@ function Header() {
         <div className={classes.header_container}>
           {/* logo-section */}
           <div className={classes.logo_container}>
-            <a href="#">
+            <Link to="/">
               <img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon logo" />
-            </a>
+            </Link>
             <div className={classes.delivery}>
               <span>
                 <TiLocationOutline />
@@ -42,18 +42,18 @@ function Header() {
                 <option value="">EN</option>
               </select>
             </a>
-            <a href="">
+            <Link to="/auth">
               <p>Sign In</p>
               <span>Account & Lists</span>
-            </a>
+            </Link>
             <a href="">
               <p>Returns</p>
               <span>& Orders</span>
             </a>
-            <a href="" className={classes.cart}>
+            <Link to="/cart" className={classes.cart}>
               <BsCart3 size={25} />
               <span>0</span>
-            </a>
+            </Link>
           </div>
         </div>
         <Lowerheader />
