@@ -11,7 +11,7 @@ function Loader() {
         height: "50vh",
       }}>
       
-      <CircleLoader color="#36d7b7"  />
+      <CircleLoader color="#121212"  />
     </div>
   )
 }

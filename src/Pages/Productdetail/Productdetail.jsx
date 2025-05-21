@@ -10,7 +10,7 @@ function Productdetail() {
   const { productid } = useParams()
   const [product, setProduct] = useState({})
   const [loading, setLoading] = useState(false)
-
+  console.log(useParams().productid)
   useEffect(() => {
     setLoading(true)
     axios.get(`${productUrl}/products/${productid}`)
@@ -26,7 +26,10 @@ function Productdetail() {
 
   return (
     <Layout>
-      {loading ? <Loader/> :(<ProductCard data={product} />) }
+      {loading ? <Loader/> :(<ProductCard data={product} 
+      flex={true}
+      renderdesc={true}
+      />) }
       
     </Layout>
   )
