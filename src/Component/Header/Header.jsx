@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { IoSearch } from "react-icons/io5";
 import { TiLocationOutline } from "react-icons/ti";
 import { BsCart3 } from "react-icons/bs";
@@ -6,7 +6,11 @@ import classes from "./Header.module.css";
 import logo from "../../assets/images/logo.ico";
 import Lowerheader from "./LowerHeader";
 import { Link } from "react-router-dom";
+import { DataContext } from '../DataProvider/DataProvider.jsx';
+
 function Header() {
+  const [{basket}] = useContext(DataContext);
+  console.log(basket.length)
   return (
     <>
       <section>
@@ -52,7 +56,7 @@ function Header() {
             </a>
             <Link to="/cart" className={classes.cart}>
               <BsCart3 size={25} />
-              <span>0</span>
+              <span>{basket.length}</span>
             </Link>
           </div>
         </div>
