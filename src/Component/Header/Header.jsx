@@ -13,7 +13,7 @@ function Header() {
   console.log(basket.length)
   return (
     <>
-      <section>
+      <section className={classes.fixed}>
         <div className={classes.header_container}>
           {/* logo-section */}
           <div className={classes.logo_container}>
@@ -40,20 +40,20 @@ function Header() {
           </div>
           {/* other-section */}
           <div className={classes.order_container}>
-            <a href="" className={classes.language}>
+            <Link to="" className={classes.language}>
               <img src={logo} alt="language flag " />
               <select name="" id="">
                 <option value="">EN</option>
               </select>
-            </a>
+            </Link>
             <Link to="/auth">
               <p>Sign In</p>
               <span>Account & Lists</span>
             </Link>
-            <a href="">
+            <Link to="">
               <p>Returns</p>
               <span>& Orders</span>
-            </a>
+            </Link>
             <Link to="/cart" className={classes.cart}>
               <BsCart3 size={25} />
               <span>{basket.length}</span>

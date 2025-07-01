@@ -91,11 +91,11 @@
   max-width: 600px;
 }
 
-.description {
+/* .description {
   font-size: 14px;
   line-height: 1.5;
   color: #333;
-}
+} */
 
 .product__fixed .rating {
   display: flex;

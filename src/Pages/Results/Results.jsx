@@ -34,7 +34,7 @@ useEffect(()=>{
            <div className={classes.Products__container}>
              {
               results.map((product)=>(
-                <ProductCard key={product.id} data={product} />
+                <ProductCard key={product.id} data={product}  renderadd={true}/>
               ))
              }
            </div>

@@ -5,7 +5,7 @@ import classes from "../product/Product.module.css";
 import { Link } from "react-router-dom";
 import { DataContext } from '../DataProvider/DataProvider.jsx';
 
-function ProductCard({ data, flex, renderdesc }) {
+function ProductCard({ data, flex, renderdesc, renderadd }) {
   const [state, dispatch] = useContext(DataContext);
   console.log(state)
        const addToCart = () => {
@@ -28,7 +28,7 @@ function ProductCard({ data, flex, renderdesc }) {
         <h3>{data.title}</h3>
         
         {renderdesc && (
-          <div className={classes.description} >{data.description}</div>
+          <div style={{maxWidth: '750px'}} className={classes.description} >{data.description}</div>
         )}
 
         <div className={classes.rating}>
@@ -43,10 +43,12 @@ function ProductCard({ data, flex, renderdesc }) {
         <div className={classes.price}>
           <CurrencyFormat amount={data?.price} />
         </div>
-
-        <button className={classes.button} onClick={addToCart}>
+         {renderadd &&(
+             <button className={classes.button} onClick={addToCart}>
           add to cart
         </button>
+         )}
+        
       </div>
     </div>
   );
