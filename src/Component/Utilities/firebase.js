@@ -1,17 +1,20 @@
-import firebase from "firebase/compat/app";
-import { getauth } from "firebase/auth";
-import "firebase/compat/firestore";
-import "firebase/compat/auth";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+
+// Use environment variables for config
 const firebaseConfig = {
-  apiKey: "AIzaSyCqX4PLtkwXCub6wKpR9Hd_i1YevpAMT8I",
-  authDomain: "ecommerce-app-3d8e1.firebaseapp.com",
-  projectId: "ecommerce-app-3d8e1",
-  storageBucket: "ecommerce-app-3d8e1.firebasestorage.app",
-  messagingSenderId: "6830615269",
-  appId: "1:6830615269:web:964fc1ca0838c817d9820c",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-export const auth = getauth(app);
-export const db = app.firestore();
+const app = initializeApp(firebaseConfig);
+
+// Export auth and db instances
+export const auth = getAuth(app);
+export const db = getFirestore(app);
